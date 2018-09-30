@@ -18,10 +18,6 @@ class funciones{
     private $memoria_ram;
     private $serial_cargador;
 
-//---------log------------
-    private $usuario;
-    private $contra;
-    private $pdo;
      public function __construct(){
         $this->pdo = new config();
     }
@@ -107,17 +103,6 @@ class funciones{
     }
 
 
-
-    public function log($contra){
-        $pdo = $this->pdo;
-        $sql = "SELECT * FROM log WHERE CEDULA = :contra";
-        $prepared = $pdo->prepare($sql);
-        $resultQuery = $prepared->execute([
-            'CEDULA' => $contra
-            ]);
-        $result = $prepared->fetch(\PDO::FETCH_ASSOC);
-        return $result;
-    }
 
 
 

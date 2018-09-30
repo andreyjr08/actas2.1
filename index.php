@@ -7,9 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="COMPUTADOR/css/log.css">
 </head>
 <body>
-<form action="COMPUTADOR/procesos/log.php" method="post">
+<form action="LOG/PROCESOS/ingresar.php" method="post">
 	<div class="container">
-		<div class="col-sm-7 mx-auto">
+		<div class="col-sm-6 mx-auto">
 		<div class="formulario">
 			<div class="col-sm-12 ">
 				<label>USUARIO</label>
@@ -22,7 +22,7 @@
 				<div class="input-group mb-3">
   					<input type="text" name="contra" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
 				</div>
-				<input class="btn btn-primary " type="submit" >
+				<input class="btn btn-primary col-sm-12 py-3" type="submit" >
 			</div>
 		</div>
 		</div>

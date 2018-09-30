@@ -1,12 +1,12 @@
 <?php
- use clases_pdo\funciones;
+ use clases_pdo\funcion_logC;
     if (isset($_POST) && !empty($_POST)) {
-        require_once('../clases/funciones.php');
+        require('../funcion_log.php');
         $resu = array();
         $usuario = $_POST['usuario'];
         $contra =  $_POST['contra'];
         echo $usuario . "--" .$contra;
-        $ins = new funciones();
+        $ins = new funcion_logC();
         $result = $ins->log($usuario, $contra);
         if($result) {
               	$resu["res"] = "si";
