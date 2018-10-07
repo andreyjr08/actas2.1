@@ -57,7 +57,7 @@ class funciones{
         return $result;
     }
      private function InsertarC(){
-         $resu = array();
+        $resu = array();
         $pdo = $this->pdo;
         $sql = "INSERT INTO computador (COMPUTADOR, ACTIVO_FIJO, SERIAL, PROCESADOR, MEMORIA_RAM,SERIAL_CARGADOR) VALUES (:computador, :activo_fijo, :serial, :procesador, :memoria_ram, :serial_cargador)";
         $query = $pdo->prepare($sql);
@@ -98,14 +98,8 @@ class funciones{
         $prepared = $pdo->prepare($sql);
         $resultQuery = $prepared->execute();
         $result = $prepared->fetch(\PDO::FETCH_ASSOC);
-
         return $result;
     }
-
-
-
-
-
       public function deleteUser($id){
         $pdo = $this->pdo;
         $sql = "DELETE FROM actas WHERE ID= :id";

@@ -20,7 +20,7 @@
 			<div class="col-sm-12 ">
 				<label>CONTRASEÑA</label>
 				<div class="input-group mb-3">
-  					<input type="text" name="contra" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
+  					<input type="password" name="contra" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
 				</div>
 				<input class="btn btn-primary col-sm-12 py-3" type="submit" >
 			</div>
