@@ -9,17 +9,16 @@ class funcionLog{
     $this->pdo = new config();
     }
     public function log($usuario,$contra){
-        $resu = array();
         $pdo = $this->pdo;
         $sql = "SELECT * FROM log WHERE CEDULA = '$usuario' AND CONTRASENA= '$contra'";
-        $query = $pdo->prepare($sql);
-        $result = $query->execute([
-            'CEDULA' => $this->usuario,
-            'CONTRASENA' => $this->contra,
-            ]);
-        $valor= mysql_fetch_array($result);
-
-            return $valor;
+        $prepared = $pdo->prepare($sql);
+        $resultQuery = $prepared->execute();
+        $result = $prepared->fetch(\PDO::FETCH_ASSOC);
+        return $result;
+        /*$query = $pdo->query($sql);
+        $resultQuery = $query->execute();
+        $queryResult = $query->fetchAll(\PDO::FETCH_ASSOC);
+        return $query;*/
     }
 }
  ?>

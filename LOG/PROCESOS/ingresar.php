@@ -8,12 +8,19 @@
         $ins = new funcionLog();
         $result = $ins->log($usuario,$contra);
         if($result) {
-                $resu["res"] = "si";
-                $resu["msj"] = "Registro insertado";  
+                $code = json_encode($result);
+                $decode=json_decode($code, true);
+                $nombre= $decode['NOMBRE'];
+                $rol= $decode['ROL'];
+                if ($rol==1) {
+                    $resu["res"] = "si";
+                    $resu["msj"] = header('Location: ../../aplicativo/index.html');
+                }
             } else {
                 $resu["res"] = "no";
-                $resu["msj"] = "Error al intentar insertar ";
+                $resu["msj"] = header('#');
             }
-            echo json_encode($result) ;
+
+            echo json_encode($resu);
         }
 ?>
